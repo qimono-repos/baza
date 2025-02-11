@@ -1,5 +1,13 @@
 import { Stack } from "expo-router";
 
 export default function RootLayout() {
-  return <Stack />;
-}
+  return (
+  <Stack>
+    <Stack.Screen name="index" options={{
+        headerTitle:"BAZA APP",
+      }} />
+    <Stack.Screen name="about" options={{
+        headerTitle:"About:Open Source Repository",
+      }}/>
+  </Stack>
+  )}

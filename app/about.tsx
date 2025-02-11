@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function Index() {
+export default function About() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>🙈 Developed by QiMono. https://GitHub.com/qimono-repos/</Text>
