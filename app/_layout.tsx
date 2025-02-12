@@ -5,6 +5,7 @@ export default function RootLayout() {
   <Stack>
     <Stack.Screen name="index" options={{
         headerTitle:"BAZA APP",
+        headerLeft:()=><></>,
       }} />
     <Stack.Screen name="about" options={{
         headerTitle:"About:Open Source Repository",
