@@ -1,13 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
-import Index from '../index';
+import About from '../(tabs)/about';
 
-describe('Index Component', () => {
+describe('About Component', () => {
     test('render expected text', () => {
-        const { getByText } = render(<Index />);
+        const { getByText } = render(<About/>);
 
    const repositoryText = getByText(
-      'This project is LGBTQ FOSS friendly. Link to the Repository'
+      'This project is LGBTQ + FOSS friendly. Link to the Code'
     );
             expect(repositoryText).toBeTruthy();
                })
