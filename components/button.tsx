@@ -1,10 +1,20 @@
 import { StyleSheet, View, Pressable, Text } from 'react-native'
+import { FontAwesome } from '@expo/vector-icons'
 
-type Props = {label: string }
+type Props = {label: string , theme?: 'primary'}
 
 const onPress = ()=> alert('button press')
 
-const ButtonComponent = ({label}: Props)=>{return (
+const ButtonComponent = ({label, theme }: Props)=>{
+  if(theme === 'primary') return (
+  <View style={[styles.buttonContainer, {borderWidth: 4, borderColor:'#324054', borderRadius: 25 }]}> 
+    <Pressable style={[styles.pressable, {backgroundColor: '#8e8ea4'}]}  onPress={onPress}>
+      <FontAwesome name="picture-o" size={18} color="#252525" style={styles.icon}/>
+      <Text style={[styles.textLabel,{color:'#252525'}]}>{label}</Text>
+    </Pressable>  
+  </View>
+  ) 
+  return (
   <View style={styles.buttonContainer}>
     <Pressable style={styles.pressable}  onPress={onPress}>
       <Text style={styles.textLabel}>{label}</Text>
@@ -22,7 +32,7 @@ const styles = StyleSheet.create({
     padding:3,
   },
   pressable:{
-    borderRadius:10,
+    borderRadius:20,
     width: '100%',
     height:'100%',
     alignItems:'center',
