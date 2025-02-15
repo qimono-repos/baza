@@ -1,6 +1,7 @@
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View , Text} from 'react-native'
 import ImageViewer from '@/components/imageViewer'
 import ButtonComponent from '@/components/button'
+import CircleButton from '@/components/circleButton' 
 import * as ImagePicker from 'expo-image-picker'
 import React, { useState } from 'react'
 
@@ -9,6 +10,7 @@ const PlaceholderImage = require('../../assets/images/background-image.png')
 export default function Index() {
 
   const [selectedImage, setSelectedImage] = useState<string|undefined>(undefined)
+  const [showAppOptions, setShowAppOptions] = useState<boolean>(false)
   
   const pickImageAsync = async () => {
     let result:any = await ImagePicker.launchImageLibraryAsync({
@@ -27,10 +29,14 @@ export default function Index() {
       <View style={styles.imageContainer}>
         <ImageViewer imgSource={selectedImage || PlaceholderImage}/> 
       </View>
+      {showAppOptions? (
+        <CircleButton onPress={()=> alert('show app options')}/>
+      ):
       <View style={styles.footerContainer}> 
         <ButtonComponent label='Choose a photo from Gallery' theme='primary' onPress={pickImageAsync}/>
-        <ButtonComponent label='Use this photo'/>
+        <ButtonComponent label='Use this photo' onPress={()=> setShowAppOptions(true)}/>
       </View>
+    }
     </View>
   );
 }
