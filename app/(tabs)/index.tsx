@@ -30,7 +30,7 @@ export default function Index() {
 
   const onModalClose = () => setIsModalVisible(false)
 
-  const onAddSticker = () => setIsModalVisible(false)
+  const onAddSticker = () => setIsModalVisible(true)
 
   const onSaveImageAsync = () => {}
 
@@ -40,7 +40,7 @@ export default function Index() {
         <ImageViewer imgSource={selectedImage || PlaceholderImage}/> 
       </View>
       {showAppOptions? (
-        <CircleButton onPress={()=> alert('show app options')}/>
+        <CircleButton onPress={onAddSticker}/>
       ):
       <View style={styles.footerContainer}> 
         <ButtonComponent label='Choose a photo from Gallery' theme='primary' onPress={pickImageAsync}/>
