@@ -2,6 +2,7 @@ import { StyleSheet, View , Text} from 'react-native'
 import ImageViewer from '@/components/imageViewer'
 import ButtonComponent from '@/components/button'
 import CircleButton from '@/components/circleButton' 
+import IconButton from '@/components/iconButton' 
 import EmojiPicker from '@/components/emojiPicker' 
 import * as ImagePicker from 'expo-image-picker'
 import React, { useState } from 'react'
@@ -40,15 +41,23 @@ export default function Index() {
         <ImageViewer imgSource={selectedImage || PlaceholderImage}/> 
       </View>
       {showAppOptions? (
-        <CircleButton onPress={onAddSticker}/>
+        <View style={styles.optionsContainer} >
+          <View style={styles.optionsRow}>
+            <IconButton icon='refresh' label='Reset' onPress={onReset}/>
+            <CircleButton onPress={onAddSticker}/>
+            <IconButton icon='save-alt' label='Save' onPress={onSaveImageAsync}/>
+          </View>
+        </View>
       ):
       <View style={styles.footerContainer}> 
         <ButtonComponent label='Choose a photo from Gallery' theme='primary' onPress={pickImageAsync}/>
         <ButtonComponent label='Use this photo' onPress={()=> setShowAppOptions(true)}/>
       </View>
     }
-      <EmojiPicker isVisible={isModalVisible} onClose={onModalClose} >
-        <Text>Emoji picker</Text>
+      <EmojiPicker 
+        isVisible={isModalVisible} 
+        onClose={onModalClose}>
+        <></>
       </EmojiPicker>
     </View>
   );
@@ -66,7 +75,15 @@ const styles = StyleSheet.create({
   footerContainer:{
     flex: 1 / 3,
     alignItems:'center',
-  }
+  },
+  optionsContainer:{
+    position:'absolute',
+    bottom:80,
+  },
+  optionsRow:{
+    alignItems:'center',
+    flexDirection:'row',
+  },
 })
 
 // sample pick image result
