@@ -21,7 +21,7 @@ const EmojiList = ({ onSelect, onClose }: Props) => {
       data={emoji}
       contentContainerStyle={styles.contentContainer}
       renderItem={({item, index}) =>(
-        <Pressable onPress={ ()=>{ onSelect(item); onClose }}>
+        <Pressable onPress={ ()=>{ onSelect(item); onClose(); }}>
           <Image source={item} key={index} style={styles.image}/>
         </Pressable>
       )}
@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
   contentContainer: {
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
-    paddingHorizontal: 20,
+    paddingTop: 75,
+    //paddingHorizontal: 20,
     flexDirection: 'row',
     alignItems:'center',
     justifyContent: 'space-between',
