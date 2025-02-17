@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   contentContainer: {
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
-    marginTop: 75,
+    marginTop: '145%',
     paddingHorizontal: 20,
     flexDirection: 'row',
     alignItems:'center',

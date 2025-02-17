@@ -19,7 +19,7 @@ export default function TabsLayout() {
                 size={30}/>,
             }} />
           <Tabs.Screen name="about" options={{ 
-              headerTitle:"About QiMono (v.1.1.0)", 
+              headerTitle:"About QiMono (v.1.2.0)", 
               tabBarIcon: ({focused, color})=> <Ionicons 
                 name={ focused ? 'information-circle-sharp' : 'information-circle-outline'} 
                 color={color}
