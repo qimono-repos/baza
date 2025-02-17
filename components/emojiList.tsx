@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
   contentContainer: {
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
-    paddingTop: 75,
-    //paddingHorizontal: 20,
+    marginTop: 75,
+    paddingHorizontal: 20,
     flexDirection: 'row',
     alignItems:'center',
     justifyContent: 'space-between',
