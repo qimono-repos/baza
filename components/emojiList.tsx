@@ -44,6 +44,9 @@ const styles = StyleSheet.create({
   },
 })
 
+export default EmojiList
+
+
 // const EmojiPicker = ({ isVisible, onClose, children }: Props) => {
 
 //     return (
