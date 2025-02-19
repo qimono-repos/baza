@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { StyleSheet, FlatList, Platform, Pressable } from 'react-native'
 import { Image } from 'expo-image'
+import axios from 'axios'
 
 type Props = { onSelect: (emoji: string) => void , onClose: () => void }
 
@@ -13,6 +14,27 @@ const EmojiList = ({ onSelect, onClose }: Props) => {
     require('../assets/images/emoji5.png'),
     require('../assets/images/emoji6.png'),
     ])
+
+
+    //const [emoji, setEmoji] = useState<string[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
+
+    // useEffect(() => {
+    //     const fetchEmojis = async () => {
+    //         try {
+    //             const response = await axios.get('http://your-api-url.com/api/emojis'); // Replace with your .NET API URL
+    //             setEmoji(response.data); // Assuming the response is an array of image URLs
+    //         } catch (err) {
+    //             setError('Failed to load emojis');
+    //         } finally {
+    //             setLoading(false);
+    //         }
+    //     };
+
+    //     fetchEmojis();
+    // }, []);
+
 
   return (
     <FlatList 
